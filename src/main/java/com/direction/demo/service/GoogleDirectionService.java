@@ -35,7 +35,7 @@ public class GoogleDirectionService {
 		tempRoutes = googleDirection.getRoutes();
 		ArrayList<Leg> tempLegs = new ArrayList<Leg>();
 		ArrayList<StepObject> tempSteps = new ArrayList<StepObject>();
-		ArrayList<RouteBean> tempRouteObjects =  new ArrayList<RouteBean>();
+		ArrayList<RouteBean> tempRouteObjects = new ArrayList<RouteBean>();
 		ArrayList<SectionBean> tempSectionObjects = null;
 		for (Route route : tempRoutes) {
 			tempLegs = route.getLegs();
@@ -43,8 +43,19 @@ public class GoogleDirectionService {
 				tempSteps = leg.getSteps();
 				tempSectionObjects = new ArrayList<SectionBean>();
 				for (StepObject step : tempSteps) {
-					tempSectionObjects.add(new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), null, null));
-				}	
+					if (step.getTravel_mode().equals("WALKING")) {
+						if (step.getDistance().getValue() > 850)
+							tempSectionObjects.add(
+									new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), "uber lyst"));
+						else
+							tempSectionObjects.add(
+									new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), null));
+					}
+					else 
+						tempSectionObjects.add(
+								new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), null));		
+
+				}
 			}
 			tempRouteObjects.add(new RouteBean(tempSectionObjects));
 		}
@@ -53,7 +64,6 @@ public class GoogleDirectionService {
 	}
 
 }
-
 
 //public MappingJacksonValue getHereDirection() {
 //
