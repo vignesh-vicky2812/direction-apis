@@ -1,4 +1,8 @@
 package com.direction.demo.pojo.here;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TravelSummary{
     private int duration;
     private int length;
@@ -21,6 +25,10 @@ public class TravelSummary{
 	}
 	public void setLength(int length) {
 		this.length = length;
+	}
+	@Override
+	public String toString() {
+		return "TravelSummary [duration=" + duration + ", length=" + length + "]";
 	}
     
 }

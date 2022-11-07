@@ -3,7 +3,9 @@ package com.direction.demo.pojo;
 import java.util.ArrayList;
 
 import com.direction.demo.pojo.here.Route;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class HereDirection {
 	private ArrayList<Route> routes;
 	
@@ -22,6 +24,11 @@ public class HereDirection {
 
 	public void setRoutes(ArrayList<Route> routes) {
 		this.routes = routes;
+	}
+
+	@Override
+	public String toString() {
+		return "HereDirection [routes=" + routes + "]";
 	}
 
 	

@@ -2,24 +2,25 @@ package com.direction.demo.pojo;
 
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-
-public class RouteObject {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class RouteBean {
 	@JsonProperty("sections")
-	private ArrayList<SectionObject> sections;
-	public RouteObject() {
+	private ArrayList<SectionBean> sections;
+	public RouteBean() {
 		
 	}
-	public RouteObject(ArrayList<SectionObject> sections) {
+	public RouteBean(ArrayList<SectionBean> sections) {
 		super();
 		this.sections = sections;
 	}
-	public ArrayList<SectionObject> getSections() {
+	public ArrayList<SectionBean> getSections() {
 		return sections;
 	}
-	public void setSections(ArrayList<SectionObject> sections) {
+	public void setSections(ArrayList<SectionBean> sections) {
 		this.sections = sections;
 	}
 	@Override

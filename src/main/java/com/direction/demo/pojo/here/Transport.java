@@ -1,5 +1,8 @@
 package com.direction.demo.pojo.here;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 
 public class Transport{
     private String mode;
@@ -73,6 +76,12 @@ public class Transport{
 	}
 	public void setLongName(String longName) {
 		this.longName = longName;
+	}
+	@Override
+	public String toString() {
+		return "Transport [mode=" + mode + ", name=" + name + ", category=" + category + ", color=" + color
+				+ ", textColor=" + textColor + ", headsign=" + headsign + ", shortName=" + shortName + ", longName="
+				+ longName + "]";
 	}
     
 }

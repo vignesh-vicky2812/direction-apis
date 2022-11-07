@@ -1,5 +1,8 @@
 package com.direction.demo.pojo.here;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Action {
 	private String action;
 	private int duration;
@@ -63,6 +66,11 @@ public class Action {
 	}
 	public void setSeverity(String severity) {
 		this.severity = severity;
+	}
+	@Override
+	public String toString() {
+		return "Action [action=" + action + ", duration=" + duration + ", instruction=" + instruction + ", length="
+				+ length + ", offset=" + offset + ", direction=" + direction + ", severity=" + severity + "]";
 	}
 
 }

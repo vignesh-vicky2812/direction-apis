@@ -1,5 +1,8 @@
 package com.direction.demo.pojo.here;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Agency {
 	private String id;
     private String name;
@@ -30,5 +33,9 @@ public class Agency {
 	}
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+	@Override
+	public String toString() {
+		return "Agency [id=" + id + ", name=" + name + ", website=" + website + "]";
 	}
 }

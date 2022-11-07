@@ -2,6 +2,9 @@ package com.direction.demo.pojo.here;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Arrival {
 	
 	private Date time;
@@ -33,6 +36,10 @@ public class Arrival {
 	}
 	public void setDelay(int delay) {
 		this.delay = delay;
+	}
+	@Override
+	public String toString() {
+		return "Arrival [time=" + time + ", place=" + place + ", delay=" + delay + "]";
 	}
 
 }

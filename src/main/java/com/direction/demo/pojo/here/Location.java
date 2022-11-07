@@ -1,5 +1,8 @@
 package com.direction.demo.pojo.here;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Location {
 	private double lat;
     private double lng;

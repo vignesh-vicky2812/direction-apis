@@ -3,8 +3,9 @@ package com.direction.demo.pojo.here;
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-
-@JsonFilter("RoutesFilter")
+import com.fasterxml.jackson.annotation.JsonInclude;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonFilter("RoutesFilter")
 public class Route{
     private String id;
     private ArrayList<Section> sections;
@@ -27,6 +28,10 @@ public class Route{
 	}
 	public void setSections(ArrayList<Section> sections) {
 		this.sections = sections;
+	}
+	@Override
+	public String toString() {
+		return "Route [id=" + id + ", sections=" + sections + "]";
 	}
     
 }

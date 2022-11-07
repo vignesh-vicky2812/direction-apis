@@ -1,5 +1,8 @@
 package com.direction.demo.pojo.here;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Place {
 	
 	private String type;
@@ -47,6 +50,11 @@ public class Place {
 	}
 	public void setCode(String code) {
 		this.code = code;
+	}
+	@Override
+	public String toString() {
+		return "Place [type=" + type + ", location=" + location + ", name=" + name + ", id=" + id + ", code=" + code
+				+ "]";
 	}
 
 }

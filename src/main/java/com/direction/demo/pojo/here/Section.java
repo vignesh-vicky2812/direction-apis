@@ -3,8 +3,9 @@ package com.direction.demo.pojo.here;
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-
-@JsonFilter("SectionFilter")
+import com.fasterxml.jackson.annotation.JsonInclude;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonFilter("SectionFilter")
 public class Section {
 	private String id;
 	private String type;
@@ -115,6 +116,13 @@ public class Section {
 
 	public void setAgency(Agency agency) {
 		this.agency = agency;
+	}
+
+	@Override
+	public String toString() {
+		return "Section [id=" + id + ", type=" + type + ", actions=" + actions + ", travelSummary=" + travelSummary
+				+ ", departure=" + departure + ", arrival=" + arrival + ", polyline=" + polyline + ", transport="
+				+ transport + ", intermediateStops=" + intermediateStops + ", agency=" + agency + "]";
 	}
 
 }

@@ -8,22 +8,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ResponseApiFormat {
 
 	@JsonProperty("routes")
-	private ArrayList<RouteObject> routes;
+	private ArrayList<RouteBean> routes;
 
 	public ResponseApiFormat() {
 
 	}
 
-	public ResponseApiFormat(ArrayList<RouteObject> routes) {
+	public ResponseApiFormat(ArrayList<RouteBean> routes) {
 		super();
 		this.routes = routes;
 	}
 
-	public ArrayList<RouteObject> getRoutes() {
+	public ArrayList<RouteBean> getRoutes() {
 		return routes;
 	}
 
-	public void setRoutes(ArrayList<RouteObject> routes) {
+	public void setRoutes(ArrayList<RouteBean> routes) {
 		this.routes = routes;
 	}
 
