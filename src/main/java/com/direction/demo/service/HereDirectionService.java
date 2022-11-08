@@ -44,7 +44,7 @@ public class HereDirectionService {
 				if (section.getType().equals("pedestrian")) {
 					if (section.getTravelSummary().getLength() > 850)
 						tempSectionObjects.add(new SectionBean(section.getType(), section.getPolyline(),
-								section.getTravelSummary().getLength(), "uber list", null, null));
+								section.getTravelSummary().getLength(), "uber lyst", null, null));
 					else
 						tempSectionObjects.add(new SectionBean(section.getType(), section.getPolyline(),
 								section.getTravelSummary().getLength(), null, null, null));
