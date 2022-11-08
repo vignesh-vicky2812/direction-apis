@@ -44,14 +44,15 @@ public class HereDirectionService {
 				if (section.getType().equals("pedestrian")) {
 					if (section.getTravelSummary().getLength() > 850)
 						tempSectionObjects.add(new SectionBean(section.getType(), section.getPolyline(),
-								section.getTravelSummary().getLength(), "uber lyst"));
+								section.getTravelSummary().getLength(), "uber lyst", null, null));
 					else
 						tempSectionObjects.add(new SectionBean(section.getType(), section.getPolyline(),
-								section.getTravelSummary().getLength(), null));
+								section.getTravelSummary().getLength(), null, null, null));
 				}
-				else 
+				else {
 					tempSectionObjects.add(new SectionBean(section.getType(), section.getPolyline(),
-							section.getTravelSummary().getLength(), null));
+							section.getTravelSummary().getLength(), null, section.getTransport().getCategory(), section.getTransport().getColor()));
+				}
 
 			}
 			tempRouteObjects.add(new RouteBean(tempSectionObjects));

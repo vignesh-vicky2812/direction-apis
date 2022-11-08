@@ -9,19 +9,25 @@ public class SectionBean {
 	private String polyline;
 	private Integer distanceInMeters;
 	private String suggestion;
+	private String vehicle;
+	private String busColor;
 	public SectionBean() {
 		
 	}
 	
-	
-
-	public SectionBean(String type, String polyline, Integer distanceInMeters, String suggestion) {
+	public SectionBean(String type, String polyline, Integer distanceInMeters, String suggestion, String vehicle,
+			String busColor) {
 		super();
 		this.type = type;
 		this.polyline = polyline;
 		this.distanceInMeters = distanceInMeters;
 		this.suggestion = suggestion;
+		this.vehicle = vehicle;
+		this.busColor = busColor;
 	}
+
+
+
 
 
 
@@ -58,6 +64,22 @@ public class SectionBean {
 
 	public void setSuggestion(String suggestion) {
 		this.suggestion = suggestion;
+	}
+
+	public String getBusColor() {
+		return busColor;
+	}
+
+	public void setBusColor(String busColor) {
+		this.busColor = busColor;
+	}
+
+	public String getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 
 	@Override

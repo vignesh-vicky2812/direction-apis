@@ -46,14 +46,14 @@ public class GoogleDirectionService {
 					if (step.getTravel_mode().equals("WALKING")) {
 						if (step.getDistance().getValue() > 850)
 							tempSectionObjects.add(
-									new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), "uber lyst"));
+									new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), "uber lyst",null, null));
 						else
 							tempSectionObjects.add(
-									new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), null));
+									new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), null, null, null));
 					}
 					else 
 						tempSectionObjects.add(
-								new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), null));		
+								new SectionBean(step.getTravel_mode(), step.getPolyline().getPoints(), step.getDistance().getValue(), null, step.getTransit_details().getLine().getVehicle().getType(), step.getTransit_details().getLine().getColor()));		
 
 				}
 			}
