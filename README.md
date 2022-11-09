@@ -1,5 +1,5 @@
 ## Here API:
-- http://localhost:8080/api/heredirection
+- https://direction-apis.herokuapp.com/api/heredirection
 
 ## Google API: 
-- http://localhost:8080/api/googledirection
+- https://direction-apis.herokuapp.com/api/googledirection
